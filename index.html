@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Diana Rojas — Mobile & Software Developer especializada en Flutter, Dart, React Native, React y Node.js."
+  >
+
+  <title>Diana Rojas | Mobile & Software Developer</title>
+
+  <style>
+    :root {
+      --bg: #08080b;
+      --card: #111116;
+      --card-hover: #18181f;
+      --text: #f5f5f7;
+      --muted: #a1a1aa;
+      --line: #292930;
+      --purple: #8b5cf6;
+      --cyan: #22d3ee;
+      --max: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at 80% 5%,
+          rgba(139, 92, 246, 0.18),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 5% 35%,
+          rgba(34, 211, 238, 0.08),
+          transparent 25%
+        ),
+        var(--bg);
+
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(8, 8, 11, 0.82);
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav {
+      height: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 1.15rem;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: var(--purple);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 70px);
+
+      display: flex;
+      align-items: center;
+
+      padding: 90px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+
+      font-size: 0.78rem;
+      font-weight: 800;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 15px 0;
+
+      font-size: clamp(3.5rem, 8vw, 6.8rem);
+
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+    }
+
+    .gradient {
+      background: linear-gradient(
+        100deg,
+        #ffffff,
+        #c4b5fd,
+        #67e8f9
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 700px;
+
+      color: var(--muted);
+
+      font-size: 1.18rem;
+
+      margin: 28px 0;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 11px 17px;
+
+      border-radius: 999px;
+
+      border: 1px solid var(--line);
+
+      background: var(--card);
+
+      font-weight: 750;
+
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: #555;
+    }
+
+    .button.primary {
+      background: white;
+      color: #08080b;
+      border-color: white;
+    }
+
+    /* DECORATION */
+
+    .orb {
+      width: 290px;
+      height: 290px;
+
+      margin: auto;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at 30% 25%,
+          #e9d5ff 0 5%,
+          transparent 20%
+        ),
+        radial-gradient(
+          circle at 70% 70%,
+          #67e8f9 0 7%,
+          transparent 24%
+        ),
+        linear-gradient(
+          135deg,
+          #7c3aed,
+          #0891b2
+        );
+
+      box-shadow:
+        0 0 100px rgba(139, 92, 246, 0.3);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      gap: 30px;
+
+      margin-bottom: 35px;
+    }
+
+    .kicker {
+      color: var(--purple);
+
+      font-size: 0.78rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.13em;
+
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 8px;
+
+      font-size: clamp(2rem, 4vw, 3.1rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.06em;
+    }
+
+    .section-header p {
+      max-width: 530px;
+
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+
+    .two-columns {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 30px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.01)
+        );
+    }
+
+    .panel p {
+      color: #c6c6ce;
+    }
+
+    .facts {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px;
+
+      margin-top: 22px;
+    }
+
+    .fact {
+      padding: 16px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 15px;
+
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .fact strong {
+      display: block;
+    }
+
+    .fact span {
+      color: var(--muted);
+
+      font-size: 0.85rem;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .project {
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+
+      border-radius: 22px;
+
+      background: var(--card);
+
+      transition: 0.25s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+
+      border-color: #4b4b55;
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-image {
+      height: 190px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #1c1c25,
+          #0d0d11
+        );
+    }
+
+    .project-icon {
+      width: 100px;
+      height: 100px;
+
+      border-radius: 23px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--purple),
+          var(--cyan)
+        );
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 2.3rem;
+      font-weight: 900;
+
+      box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-content {
+      padding: 23px;
+    }
+
+    .company {
+      color: var(--cyan);
+
+      font-size: 0.76rem;
+
+      font-weight: 800;
+    }
+
+    .project h3 {
+      font-size: 1.3rem;
+
+      margin: 4px 0;
+    }
+
+    .project p {
+      color: var(--muted);
+
+      font-size: 0.9rem;
+
+      margin: 10px 0 16px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 6px;
+
+      margin-bottom: 17px;
+    }
+
+    .tag {
+      padding: 4px 8px;
+
+      border: 1px solid #30303a;
+
+      border-radius: 999px;
+
+      background: #202028;
+
+      color: #d4d4da;
+
+      font-size: 0.7rem;
+    }
+
+    .store {
+      display: inline-block;
+
+      padding: 8px 11px;
+
+      border-radius: 9px;
+
+      background: white;
+
+      color: #09090b;
+
+      font-size: 0.76rem;
+
+      font-weight: 800;
+    }
+
+    .store.dark {
+      background: #22222a;
+
+      color: white;
+
+      border: 1px solid #363640;
+    }
+
+    /* OTHER PROJECTS */
+
+    .mini-projects {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 12px;
+
+      margin-top: 18px;
+    }
+
+    .mini {
+      padding: 18px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 16px;
+
+      background: rgba(255,255,255,0.02);
+    }
+
+    .mini span {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 0.8rem;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline {
+      border-left: 1px solid #33333d;
+
+      padding-left: 25px;
+    }
+
+    .job {
+      position: relative;
+
+      margin-bottom: 35px;
+    }
+
+    .job::before {
+      content: "";
+
+      position: absolute;
+
+      left: -30px;
+      top: 8px;
+
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: var(--purple);
+
+      box-shadow:
+        0 0 15px rgba(139,92,246,0.8);
+    }
+
+    .date {
+      color: var(--cyan);
+
+      font-size: 0.8rem;
+
+      font-weight: 800;
+    }
+
+    .job h3 {
+      font-size: 1.2rem;
+    }
+
+    .job p {
+      color: var(--muted);
+
+      margin-top: 5px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+    .skill {
+      padding: 9px 12px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 11px;
+
+      background: rgba(255,255,255,0.02);
+
+      color: #ddd;
+
+      font-size: 0.88rem;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+
+      padding: 65px 25px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 30px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0,
+          rgba(139,92,246,0.15),
+          transparent 55%
+        ),
+        var(--card);
+    }
+
+    .contact h2 {
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+    }
+
+    .contact p {
+      max-width: 600px;
+
+      margin: 14px auto 25px;
+
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--line);
+
+      color: #777;
+
+      font-size: 0.85rem;
+    }
+
+    .footer-content {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mini-projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .orb {
+        width: 210px;
+        height: 210px;
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .projects,
+      .mini-projects {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-header p {
+        margin-top: 15px;
+      }
+
+      .project-image {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav">
+
+    <a class="logo" href="#">
+      Diana<span>.</span>dev
+    </a>
+
+    <div class="nav-links">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#stack">Stack</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<header class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        Mobile · Software · Backend
+      </div>
+
+      <h1>
+        Diana
+        <span class="gradient">
+          Rojas
+        </span>
+      </h1>
+
+      <p class="hero-description">
+        Mobile & Software Developer con experiencia profesional
+        construyendo aplicaciones para Android y iOS.
+        Especializada en Flutter y Dart, con experiencia en
+        React Native, React, Node.js y desarrollo nativo.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="button primary"
+          href="#proyectos"
+        >
+          Ver proyectos ↓
+        </a>
+
+        <a
+          class="button"
+          href="https://www.linkedin.com/in/diana-rojas-520092162/"
+          target="_blank"
+        >
+          LinkedIn ↗
+        </a>
+
+        <a
+          class="button"
+          href="https://github.com/daikili"
+          target="_blank"
+        >
+          GitHub ↗
+        </a>
+
+      </div>
+
+    </div>
+
+    <div
+      class="orb"
+      aria-hidden="true"
+    ></div>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<section>
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div>
+
+        <div class="kicker">
+          Perfil
+        </div>
+
+        <h2>
+          Software que llega a producción.
+        </h2>
+
+      </div>
+
+      <p>
+        Experiencia trabajando en productos reales,
+        mantenimiento, evolución y nuevas funcionalidades.
+      </p>
+
+    </div>
+
+
+    <div class="two-columns">
+
+      <div class="panel">
+
+        <p>
+          He participado en múltiples aplicaciones móviles
+          para diferentes industrias y clientes, trabajando
+          principalmente con Flutter y Dart.
+
+          También he desarrollado soluciones con React Native
+          y React, y actualmente estoy ampliando mi perfil
+          hacia backend con Node.js y desarrollo nativo.
+        </p>
+
+
+        <div class="facts">
+
+          <div class="fact">
+            <strong>Mobile</strong>
+            <span>Android · iOS</span>
+          </div>
+
+          <div class="fact">
+            <strong>Frontend</strong>
+            <span>Flutter · React Native · React</span>
+          </div>
+
+          <div class="fact">
+            <strong>Backend</strong>
+            <span>Node.js · REST APIs</span>
+          </div>
+
+          <div class="fact">
+            <strong>Arquitectura</strong>
+            <span>Clean Architecture · SOLID</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="kicker">
+          Actualmente
+        </div>
+
+        <h3
+          style="
+          font-size:1.7rem;
+          margin:8px 0 12px;
+          "
+        >
+          Ampliando mi perfil hacia Backend y Native.
+        </h3>
+
+        <p>
+          Además de mi experiencia con Flutter,
+          estoy fortaleciendo conocimientos y práctica
+          en Node.js, backend y desarrollo nativo para
+          complementar mi perfil de software developer.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="proyectos">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div>
+
+        <div class="kicker">
+          Trabajo profesional
+        </div>
+
+        <h2>
+          Apps en producción
+        </h2>
+
+      </div>
+
+      <p>
+        Proyectos en los que participé durante mi
+        experiencia profesional.
+      </p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+      <!-- ORKAY -->
+
+      <article class="project">
+
+        <div class="project-image">
+
+          <div class="project-icon">
+            O
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="company">
+            Kubo S.A.S.
+          </span>
+
+          <h3>
+            Orkay
+          </h3>
+
+          <p>
+            Aplicación móvil para descubrir marcas,
+            emprendimientos, actividades y planes.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Android</span>
+            <span class="tag">iOS</span>
+
+          </div>
+
+          <a
+            class="store"
+            href="https://play.google.com/store/apps/details?id=com.kubo.orkay"
+            target="_blank"
+          >
+            Google Play ↗
+          </a>
+
+          <a
+            class="store dark"
+            href="https://apps.apple.com/co/app/orkay/id6670175778"
+            target="_blank"
+          >
+            App Store ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- FNG -->
+
+      <article class="project">
+
+        <div class="project-image">
+
+          <div class="project-icon">
+            F
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="company">
+            Kubo S.A.S.
+          </span>
+
+          <h3>
+            FNG
+          </h3>
+
+          <p>
+            Aplicación móvil del Fondo Nacional de Garantías
+            para apoyar consultas y gestión comercial.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Android</span>
+            <span class="tag">iOS</span>
+
+          </div>
+
+          <a
+            class="store"
+            href="https://play.google.com/store/apps/details?id=com.kubo.fng"
+            target="_blank"
+          >
+            Google Play ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- CCD -->
+
+      <article class="project">
+
+        <div class="project-image">
+
+          <div class="project-icon">
+            C
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="company">
+            Kubo S.A.S.
+          </span>
+
+          <h3>
+            CCD Audit
+          </h3>
+
+          <p>
+            Aplicación para gestión y seguimiento
+            de auditorías en instituciones de salud.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Android</span>
+
+          </div>
+
+          <a
+            class="store"
+            href="https://play.google.com/store/apps/details?id=co.kubo.concienciav2"
+            target="_blank"
+          >
+            Google Play ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- VITAPP -->
+
+      <article class="project">
+
+        <div class="project-image">
+
+          <div class="project-icon">
+            V
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="company">
+            Kubo S.A.S.
+          </span>
+
+          <h3>
+            Vitapp
+          </h3>
+
+          <p>
+            Aplicación de bienestar y salud con
+            contenidos y recomendaciones personalizadas.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Android</span>
+
+          </div>
+
+          <a
+            class="store"
+            href="https://play.google.com/store/apps/details?id=com.vitapp2"
+            target="_blank"
+          >
+            Google Play ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- CAMINANTES -->
+
+      <article class="project">
+
+        <div class="project-image">
+
+          <div class="project-icon">
+            M
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="company">
+            Kubo S.A.S.
+          </span>
+
+          <h3>
+            Caminantes Mi Ser
+          </h3>
+
+          <p>
+            Aplicación con mapas, geolocalización
+            y encuestas para intervención social.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Flutter</span>
+            <span class="tag">Geolocalización</span>
+            <span class="tag">Android</span>
+
+          </div>
+
+          <a
+            class="store"
+            href="https://play.google.com/store/apps/details?id=co.kubo.MiSer"
+            target="_blank"
+          >
+            Google Play ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PIDELO -->
+
+      <article class="project">
+
+        <div class="project-image">
+
+          <div class="project-icon">
+            P
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="company">
+            Kubo S.A.S.
+          </span>
+
+          <h3>
+            Pídelo
+          </h3>
+
+          <p>
+            Solución móvil para transporte empresarial,
+            encomiendas y gestión de vehículos.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Android</span>
+            <span class="tag">iOS</span>
+
+          </div>
+
+          <a
+            class="store"
+            href="https://play.google.com/store/apps/details?id=com.kubo.pidelousuario"
+            target="_blank"
+          >
+            Google Play ↗
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+
+    <div class="mini-projects">
+
+      <div class="mini">
+        <strong>El Tiempo</strong>
+        <span>Kubo S.A.S. · Flutter · Android</span>
+      </div>
+
+      <div class="mini">
+        <strong>Ideas Control</strong>
+        <span>Kubo S.A.S. · Flutter · NFC</span>
+      </div>
+
+      <div class="mini">
+        <strong>Next FPV</strong>
+        <span>Freelance · Flutter · Android</span>
+      </div>
+
+      <div class="mini">
+        <strong>Bericool</strong>
+        <span>Kubo S.A.S. · Android</span>
+      </div>
+
+      <div class="mini">
+        <strong>Pamii</strong>
+        <span>Kubo S.A.S. · Mobile</span>
+      </div>
+
+      <div class="mini">
+        <strong>Tu Casa Propia</strong>
+        <span>Un Toque Digital · React</span>
+      </div>
+
+      <div class="mini">
+        <strong>Bcademy</strong>
+        <span>Un Toque Digital · React Native</span>
+      </div>
+
+      <div class="mini">
+        <strong>Admin Leads</strong>
+        <span>Un Toque Digital · React</span>
+      </div>
+
+      <div class="mini">
+        <strong>+ proyectos</strong>
+        <span>Experiencia con múltiples productos</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="experiencia">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div>
+
+        <div class="kicker">
+          Trayectoria
+        </div>
+
+        <h2>
+          Experiencia profesional
+        </h2>
+
+      </div>
+
+      <p>
+        Desarrollo móvil, frontend y evolución
+        hacia backend.
+      </p>
+
+    </div>
+
+
+    <div class="two-columns">
+
+      <div class="panel timeline">
+
+        <div class="job">
+
+          <div class="date">
+            2023 — 2026
+          </div>
+
+          <h3>
+            Mobile Developer · Kubo S.A.S.
+          </h3>
+
+          <p>
+            Desarrollo y mantenimiento de aplicaciones
+            para Android e iOS, principalmente con
+            Flutter y Dart. Participación en funcionalidades,
+            integraciones, correcciones y evolución
+            de productos reales.
+          </p>
+
+        </div>
+
+
+        <div class="job">
+
+          <div class="date">
+            Experiencia profesional
+          </div>
+
+          <h3>
+            Frontend & Mobile Developer · Un Toque Digital
+          </h3>
+
+          <p>
+            Participación en Tu Casa Propia con React,
+            Bcademy con React Native y Admin Leads con React.
+          </p>
+
+        </div>
+
+
+        <div class="job">
+
+          <div class="date">
+            Freelance
+          </div>
+
+          <h3>
+            Mobile Developer · Next FPV
+          </h3>
+
+          <p>
+            Desarrollo de aplicación móvil como proyecto freelance.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="kicker">
+          Perfil actual
+        </div>
+
+        <h3
+          style="
+          font-size:1.7rem;
+          margin:8px 0 12px;
+          "
+        >
+          Mobile + Software + Backend
+        </h3>
+
+        <p>
+          Estoy ampliando mi perfil hacia Node.js,
+          backend y desarrollo nativo, complementando
+          mi experiencia principal en desarrollo móvil
+          con Flutter.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="stack">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div>
+
+        <div class="kicker">
+          Tecnologías
+        </div>
+
+        <h2>
+          Mi stack
+        </h2>
+
+      </div>
+
+      <p>
+        Tecnologías con las que he trabajado
+        profesionalmente o estoy fortaleciendo.
+      </p>
+
+    </div>
+
+
+    <div class="panel">
+
+      <div class="skills">
+
+        <span class="skill">Dart</span>
+        <span class="skill">Flutter</span>
+        <span class="skill">BLoC</span>
+        <span class="skill">Cubit</span>
+        <span class="skill">Riverpod</span>
+        <span class="skill">Provider</span>
+        <span class="skill">GetX</span>
+        <span class="skill">GetIt</span>
+        <span class="skill">Clean Architecture</span>
+        <span class="skill">MVVM</span>
+        <span class="skill">SOLID</span>
+        <span class="skill">REST API</span>
+        <span class="skill">GraphQL</span>
+        <span class="skill">Firebase</span>
+        <span class="skill">SQLite</span>
+        <span class="skill">React Native</span>
+        <span class="skill">React</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">Android</span>
+        <span class="skill">iOS</span>
+        <span class="skill">Git</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="contacto">
+
+  <div class="container">
+
+    <div class="contact">
+
+      <div class="kicker">
+        Contacto
+      </div>
+
+      <h2>
+        ¿Hablamos?
+      </h2>
+
+      <p>
+        Estoy abierta a oportunidades como Mobile Developer,
+        Flutter Developer o Software Developer.
+      </p>
+
+      <div
+        class="buttons"
+        style="justify-content:center;"
+      >
+
+        <a
+          class="button primary"
+          href="mailto:dianarojasdev011@gmail.com"
+        >
+          dianarojasdev011@gmail.com
+        </a>
+
+        <a
+          class="button"
+          href="https://www.linkedin.com/in/diana-rojas-520092162/"
+          target="_blank"
+        >
+          LinkedIn ↗
+        </a>
+
+        <a
+          class="button"
+          href="https://github.com/daikili"
+          target="_blank"
+        >
+          GitHub ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  <div class="container footer-content">
+
+    <span>
+      © 2026 Diana Rojas
+    </span>
+
+    <span>
+      Mobile & Software Developer · Flutter · Node.js · React Native
+    </span>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
