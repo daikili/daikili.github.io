@@ -4,24 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Diana Rojas | Mobile & Software Developer</title>
+
   <meta
     name="description"
-    content="Diana Rojas — Mobile & Software Developer especializada en Flutter, Dart, React Native, React y Node.js."
+    content="Portafolio de Diana Rojas, Mobile & Software Developer especializada en Flutter, Dart, React Native, React, Node.js e inteligencia artificial aplicada al desarrollo."
   >
 
-  <title>Diana Rojas | Mobile & Software Developer</title>
+  <meta name="author" content="Diana Rojas">
 
   <style>
     :root {
-      --bg: #08080b;
-      --card: #111116;
-      --card-hover: #18181f;
-      --text: #f5f5f7;
-      --muted: #a1a1aa;
-      --line: #292930;
-      --purple: #8b5cf6;
-      --cyan: #22d3ee;
-      --max: 1120px;
+      --bg: #08070d;
+      --bg-soft: #0d0b14;
+      --card: #11101a;
+      --card-hover: #161421;
+      --border: #292438;
+
+      --text: #f5f2ff;
+      --muted: #aaa4ba;
+
+      --purple: #9b7cff;
+      --purple-light: #b69cff;
+      --green: #65e6a2;
+
+      --max-width: 1180px;
     }
 
     * {
@@ -35,28 +42,23 @@
     }
 
     body {
-      font-family:
-        Inter,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
 
-      color: var(--text);
       background:
         radial-gradient(
-          circle at 80% 5%,
-          rgba(139, 92, 246, 0.18),
-          transparent 28%
+          circle at 80% 10%,
+          rgba(155, 124, 255, 0.12),
+          transparent 30%
         ),
         radial-gradient(
-          circle at 5% 35%,
-          rgba(34, 211, 238, 0.08),
+          circle at 10% 40%,
+          rgba(101, 230, 162, 0.06),
           transparent 25%
         ),
         var(--bg);
 
+      color: var(--text);
       line-height: 1.6;
     }
 
@@ -66,575 +68,981 @@
     }
 
     .container {
-      width: min(calc(100% - 32px), var(--max));
-      margin: auto;
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    /* NAVBAR */
+    /* =========================
+       HEADER
+    ========================== */
 
-    nav {
+    header {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
 
-      background: rgba(8, 8, 11, 0.82);
+      background: rgba(8, 7, 13, 0.92);
       backdrop-filter: blur(18px);
 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(41, 36, 56, 0.9);
     }
 
-    .nav {
-      height: 70px;
+    .header-container {
+      min-height: 72px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      gap: 30px;
     }
 
     .logo {
-      font-weight: 900;
-      font-size: 1.15rem;
-      letter-spacing: -0.04em;
+      flex-shrink: 0;
+
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
     }
 
     .logo span {
       color: var(--purple);
     }
 
-    .nav-links {
+    /* BOTONES DEL HEADER */
+
+    .nav-menu {
       display: flex;
-      gap: 26px;
+      align-items: center;
+      justify-content: flex-end;
+
+      gap: 7px;
+
+      list-style: none;
+    }
+
+    .nav-menu a {
+      display: block;
+
+      padding: 8px 11px;
 
       color: var(--muted);
-      font-size: 0.9rem;
+
+      font-size: 0.82rem;
+      font-weight: 600;
+
+      border-radius: 8px;
+
+      transition: all 0.2s ease;
     }
 
-    .nav-links a:hover {
-      color: white;
+    .nav-menu a:hover {
+      color: var(--text);
+      background: rgba(155, 124, 255, 0.09);
     }
 
-    /* HERO */
+    .nav-menu a.active {
+      color: var(--purple-light);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
 
     .hero {
-      min-height: calc(100vh - 70px);
+      min-height: calc(100vh - 72px);
 
       display: flex;
       align-items: center;
 
       padding: 90px 0;
-    }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-
-      gap: 70px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      color: var(--cyan);
-
-      font-size: 0.78rem;
-      font-weight: 800;
-
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 15px 0;
-
-      font-size: clamp(3.5rem, 8vw, 6.8rem);
-
-      line-height: 0.9;
-      letter-spacing: -0.08em;
-    }
-
-    .gradient {
-      background: linear-gradient(
-        100deg,
-        #ffffff,
-        #c4b5fd,
-        #67e8f9
-      );
-
-      -webkit-background-clip: text;
-      background-clip: text;
-
-      color: transparent;
-    }
-
-    .hero-description {
-      max-width: 700px;
-
-      color: var(--muted);
-
-      font-size: 1.18rem;
-
-      margin: 28px 0;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-
-      padding: 11px 17px;
-
-      border-radius: 999px;
-
-      border: 1px solid var(--line);
-
-      background: var(--card);
-
-      font-weight: 750;
-
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      border-color: #555;
-    }
-
-    .button.primary {
-      background: white;
-      color: #08080b;
-      border-color: white;
-    }
-
-    /* DECORATION */
-
-    .orb {
-      width: 290px;
-      height: 290px;
-
-      margin: auto;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle at 30% 25%,
-          #e9d5ff 0 5%,
-          transparent 20%
-        ),
-        radial-gradient(
-          circle at 70% 70%,
-          #67e8f9 0 7%,
-          transparent 24%
-        ),
-        linear-gradient(
-          135deg,
-          #7c3aed,
-          #0891b2
-        );
-
-      box-shadow:
-        0 0 100px rgba(139, 92, 246, 0.3);
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 95px 0;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-
-      gap: 30px;
-
-      margin-bottom: 35px;
-    }
-
-    .kicker {
-      color: var(--purple);
-
-      font-size: 0.78rem;
-
-      font-weight: 800;
-
-      letter-spacing: 0.13em;
-
-      text-transform: uppercase;
-    }
-
-    h2 {
-      margin-top: 8px;
-
-      font-size: clamp(2rem, 4vw, 3.1rem);
-
-      line-height: 1;
-
-      letter-spacing: -0.06em;
-    }
-
-    .section-header p {
-      max-width: 530px;
-
-      color: var(--muted);
-    }
-
-    /* ABOUT */
-
-    .two-columns {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 18px;
-    }
-
-    .panel {
-      padding: 30px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 24px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.04),
-          rgba(255, 255, 255, 0.01)
-        );
-    }
-
-    .panel p {
-      color: #c6c6ce;
-    }
-
-    .facts {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 10px;
-
-      margin-top: 22px;
-    }
-
-    .fact {
-      padding: 16px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 15px;
-
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .fact strong {
-      display: block;
-    }
-
-    .fact span {
-      color: var(--muted);
-
-      font-size: 0.85rem;
-    }
-
-    /* PROJECTS */
-
-    .projects {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 18px;
-    }
-
-    .project {
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-
-      border-radius: 22px;
-
-      background: var(--card);
-
-      transition: 0.25s;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-
-      border-color: #4b4b55;
-
-      box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    .project-image {
-      height: 190px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          #1c1c25,
-          #0d0d11
-        );
-    }
-
-    .project-icon {
-      width: 100px;
-      height: 100px;
-
-      border-radius: 23px;
-
-      background:
-        linear-gradient(
-          135deg,
-          var(--purple),
-          var(--cyan)
-        );
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 2.3rem;
-      font-weight: 900;
-
-      box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    .project-content {
-      padding: 23px;
-    }
-
-    .company {
-      color: var(--cyan);
-
-      font-size: 0.76rem;
-
-      font-weight: 800;
-    }
-
-    .project h3 {
-      font-size: 1.3rem;
-
-      margin: 4px 0;
-    }
-
-    .project p {
-      color: var(--muted);
-
-      font-size: 0.9rem;
-
-      margin: 10px 0 16px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 6px;
-
-      margin-bottom: 17px;
-    }
-
-    .tag {
-      padding: 4px 8px;
-
-      border: 1px solid #30303a;
-
-      border-radius: 999px;
-
-      background: #202028;
-
-      color: #d4d4da;
-
-      font-size: 0.7rem;
-    }
-
-    .store {
-      display: inline-block;
-
-      padding: 8px 11px;
-
-      border-radius: 9px;
-
-      background: white;
-
-      color: #09090b;
-
-      font-size: 0.76rem;
-
-      font-weight: 800;
-    }
-
-    .store.dark {
-      background: #22222a;
-
-      color: white;
-
-      border: 1px solid #363640;
-    }
-
-    /* OTHER PROJECTS */
-
-    .mini-projects {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 12px;
-
-      margin-top: 18px;
-    }
-
-    .mini {
-      padding: 18px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 16px;
-
-      background: rgba(255,255,255,0.02);
-    }
-
-    .mini span {
-      display: block;
-
-      margin-top: 3px;
-
-      color: var(--muted);
-
-      font-size: 0.8rem;
-    }
-
-    /* EXPERIENCE */
-
-    .timeline {
-      border-left: 1px solid #33333d;
-
-      padding-left: 25px;
-    }
-
-    .job {
       position: relative;
-
-      margin-bottom: 35px;
+      overflow: hidden;
     }
 
-    .job::before {
+    .hero::before {
       content: "";
 
       position: absolute;
 
-      left: -30px;
+      width: 420px;
+      height: 420px;
+
+      background: rgba(155, 124, 255, 0.09);
+
+      filter: blur(100px);
+
+      border-radius: 50%;
+
+      top: 10%;
+      right: 5%;
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+
+      font-size: 0.9rem;
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.4rem);
+
+      line-height: 0.98;
+
+      letter-spacing: -4px;
+
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--purple);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+
+      color: var(--muted);
+
+      margin-bottom: 22px;
+
+      max-width: 760px;
+    }
+
+    .hero-stack {
+      color: var(--text);
+
+      font-size: 0.98rem;
+
+      margin-bottom: 34px;
+    }
+
+    .hero-stack span {
+      color: var(--purple-light);
+    }
+
+    .hero-buttons {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 48px;
+
+      padding: 0 20px;
+
+      border-radius: 10px;
+
+      border: 1px solid var(--border);
+
+      font-size: 0.92rem;
+      font-weight: 700;
+
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--purple);
+
+      color: #0b0812;
+
+      border-color: var(--purple);
+    }
+
+    .button-primary:hover {
+      background: var(--purple-light);
+
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      background: rgba(17, 16, 26, 0.7);
+
+      color: var(--text);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--purple);
+
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section {
+      padding: 100px 0;
+
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: var(--purple);
+
+      font-size: 0.8rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+
+      line-height: 1.1;
+
+      letter-spacing: -1.5px;
+
+      margin-bottom: 14px;
+    }
+
+    .section-description {
+      color: var(--muted);
+
+      max-width: 760px;
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(17, 16, 26, 0.96),
+          rgba(13, 11, 20, 0.96)
+        );
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      padding: 30px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1.5fr 0.8fr;
+
+      gap: 28px;
+    }
+
+    .card p {
+      color: var(--muted);
+
+      margin-bottom: 18px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-card {
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .highlight-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 160px;
+      height: 160px;
+
+      border-radius: 50%;
+
+      background: rgba(101, 230, 162, 0.08);
+
+      filter: blur(45px);
+
+      top: -60px;
+      right: -40px;
+    }
+
+    .highlight-title {
+      color: var(--green);
+
+      font-size: 0.85rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 18px;
+    }
+
+    .highlight-list {
+      list-style: none;
+    }
+
+    .highlight-list li {
+      padding: 12px 0;
+
+      border-bottom: 1px solid var(--border);
+
+      color: var(--text);
+
+      font-size: 0.94rem;
+    }
+
+    .highlight-list li:last-child {
+      border-bottom: 0;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .projects-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      transition: 0.25s ease;
+
+      display: flex;
+
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+
+      border-color: rgba(155, 124, 255, 0.55);
+
+      background: var(--card-hover);
+    }
+
+    .project-visual {
+      height: 190px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          rgba(155, 124, 255, 0.2),
+          transparent 45%
+        ),
+        linear-gradient(135deg, #15121f, #0c0b12);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-letter {
+      width: 82px;
+      height: 82px;
+
+      border-radius: 22px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 2rem;
+      font-weight: 900;
+
+      color: var(--text);
+
+      border: 1px solid rgba(155, 124, 255, 0.4);
+
+      background: rgba(155, 124, 255, 0.12);
+
+      box-shadow: 0 0 40px rgba(155, 124, 255, 0.12);
+    }
+
+    .project-content {
+      padding: 24px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      flex: 1;
+    }
+
+    .project-company {
+      color: var(--green);
+
+      font-size: 0.76rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 7px;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      color: var(--muted);
+
+      font-size: 0.9rem;
+
+      margin-bottom: 18px;
+
+      flex: 1;
+    }
+
+    .tags {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+
+      color: var(--muted);
+
+      padding: 4px 9px;
+
+      border-radius: 999px;
+
+      font-size: 0.72rem;
+    }
+
+    .project-links {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .project-link {
+      color: var(--purple-light);
+
+      font-size: 0.82rem;
+
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      color: var(--green);
+    }
+
+    .mini-projects {
+      margin-top: 45px;
+    }
+
+    .mini-projects-title {
+      font-size: 1.15rem;
+
+      margin-bottom: 18px;
+    }
+
+    .mini-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 12px;
+    }
+
+    .mini-card {
+      padding: 18px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 12px;
+
+      background: rgba(17, 16, 26, 0.6);
+    }
+
+    .mini-card strong {
+      display: block;
+
+      margin-bottom: 5px;
+
+      font-size: 0.92rem;
+    }
+
+    .mini-card span {
+      color: var(--muted);
+
+      font-size: 0.78rem;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================== */
+
+    .timeline {
+      position: relative;
+
+      max-width: 900px;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+
+      left: 8px;
+
+      top: 10px;
+      bottom: 10px;
+
+      width: 1px;
+
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+
+      padding-left: 42px;
+
+      margin-bottom: 42px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+
+      left: 0;
       top: 8px;
 
-      width: 9px;
-      height: 9px;
+      width: 17px;
+      height: 17px;
 
       border-radius: 50%;
 
       background: var(--purple);
 
-      box-shadow:
-        0 0 15px rgba(139,92,246,0.8);
+      border: 4px solid var(--bg);
+
+      box-shadow: 0 0 0 1px var(--purple);
     }
 
-    .date {
-      color: var(--cyan);
+    .timeline-date {
+      color: var(--green);
 
       font-size: 0.8rem;
 
       font-weight: 800;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 7px;
     }
 
-    .job h3 {
-      font-size: 1.2rem;
+    .timeline-title {
+      font-size: 1.25rem;
+
+      margin-bottom: 3px;
     }
 
-    .job p {
+    .timeline-company {
+      color: var(--purple-light);
+
+      margin-bottom: 12px;
+
+      font-size: 0.92rem;
+    }
+
+    .timeline-description {
       color: var(--muted);
 
-      margin-top: 5px;
+      max-width: 760px;
+
+      font-size: 0.93rem;
     }
 
-    /* SKILLS */
+    /* =========================
+       EDUCATION
+    ========================== */
 
-    .skills {
+    .education-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .education-card {
+      border: 1px solid var(--border);
+
+      background: var(--card);
+
+      border-radius: 16px;
+
+      padding: 25px;
+    }
+
+    .education-year {
+      color: var(--green);
+
+      font-size: 0.78rem;
+
+      font-weight: 800;
+
+      margin-bottom: 9px;
+    }
+
+    .education-title {
+      font-size: 1.05rem;
+
+      margin-bottom: 6px;
+    }
+
+    .education-place {
+      color: var(--purple-light);
+
+      font-size: 0.88rem;
+
+      margin-bottom: 8px;
+    }
+
+    .education-description {
+      color: var(--muted);
+
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       STACK
+    ========================== */
+
+    .stack-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .stack-card {
+      border: 1px solid var(--border);
+
+      background: var(--card);
+
+      border-radius: 16px;
+
+      padding: 24px;
+    }
+
+    .stack-card h3 {
+      font-size: 1rem;
+
+      margin-bottom: 15px;
+    }
+
+    .stack-items {
       display: flex;
 
       flex-wrap: wrap;
 
-      gap: 9px;
+      gap: 8px;
     }
 
-    .skill {
-      padding: 9px 12px;
+    .stack-item {
+      padding: 7px 10px;
 
-      border: 1px solid var(--line);
+      border-radius: 8px;
 
-      border-radius: 11px;
+      background: rgba(155, 124, 255, 0.08);
 
-      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(155, 124, 255, 0.18);
 
-      color: #ddd;
+      color: var(--muted);
 
-      font-size: 0.88rem;
+      font-size: 0.78rem;
     }
 
-    /* CONTACT */
+    /* =========================
+       IA
+    ========================== */
 
-    .contact {
-      text-align: center;
+    .ai-card {
+      grid-column: span 3;
 
-      padding: 65px 25px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 30px;
+      border: 1px solid rgba(101, 230, 162, 0.22);
 
       background:
         radial-gradient(
-          circle at 50% 0,
-          rgba(139,92,246,0.15),
-          transparent 55%
+          circle at 90% 10%,
+          rgba(101, 230, 162, 0.08),
+          transparent 30%
+        ),
+        var(--card);
+
+      border-radius: 18px;
+
+      padding: 30px;
+    }
+
+    .ai-card-header {
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content: space-between;
+
+      gap: 25px;
+
+      margin-bottom: 20px;
+    }
+
+    .ai-card h3 {
+      font-size: 1.2rem;
+
+      margin-bottom: 7px;
+    }
+
+    .ai-card p {
+      color: var(--muted);
+
+      max-width: 700px;
+
+      font-size: 0.9rem;
+    }
+
+    .ai-badge {
+      flex-shrink: 0;
+
+      padding: 7px 12px;
+
+      border-radius: 999px;
+
+      color: var(--green);
+
+      border: 1px solid rgba(101, 230, 162, 0.25);
+
+      background: rgba(101, 230, 162, 0.07);
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+    }
+
+    .ai-tools {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .ai-tool {
+      padding: 9px 13px;
+
+      border-radius: 9px;
+
+      background: rgba(155, 124, 255, 0.08);
+
+      border: 1px solid rgba(155, 124, 255, 0.2);
+
+      color: var(--text);
+
+      font-size: 0.8rem;
+
+      font-weight: 600;
+    }
+
+    /* =========================
+       PROTOTIPOS
+    ========================== */
+
+    .prototype-section {
+      margin-top: 20px;
+
+      padding: 25px;
+
+      border-radius: 16px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(17, 16, 26, 0.65);
+    }
+
+    .prototype-section h3 {
+      font-size: 1rem;
+
+      margin-bottom: 8px;
+    }
+
+    .prototype-section p {
+      color: var(--muted);
+
+      font-size: 0.86rem;
+    }
+
+    /* =========================
+       LANGUAGES
+    ========================== */
+
+    .languages {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .language-card {
+      padding: 25px;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+    }
+
+    .language-name {
+      font-size: 1rem;
+
+      margin-bottom: 7px;
+    }
+
+    .language-level {
+      color: var(--green);
+
+      font-size: 0.84rem;
+
+      font-weight: 700;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-card {
+      text-align: center;
+
+      padding: 65px 30px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 22px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(155, 124, 255, 0.13),
+          transparent 45%
         ),
         var(--card);
     }
 
-    .contact h2 {
-      font-size: clamp(2.3rem, 5vw, 3.8rem);
+    .contact-card h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+
+      letter-spacing: -1.5px;
+
+      margin-bottom: 15px;
     }
 
-    .contact p {
-      max-width: 600px;
-
-      margin: 14px auto 25px;
-
+    .contact-card p {
       color: var(--muted);
+
+      max-width: 650px;
+
+      margin: 0 auto 28px;
     }
 
-    /* FOOTER */
+    .contact-email {
+      display: inline-block;
+
+      color: var(--purple-light);
+
+      font-weight: 700;
+
+      margin-bottom: 25px;
+
+      font-size: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      padding: 30px 0;
+      border-top: 1px solid var(--border);
 
-      border-top: 1px solid var(--line);
+      padding: 28px 0;
 
-      color: #777;
-
-      font-size: 0.85rem;
+      margin-top: 30px;
     }
 
     .footer-content {
@@ -644,896 +1052,1462 @@
 
       gap: 20px;
 
-      flex-wrap: wrap;
+      align-items: center;
     }
 
-    /* MOBILE */
+    .footer-content p {
+      color: var(--muted);
 
-    @media (max-width: 900px) {
+      font-size: 0.8rem;
+    }
 
-      .hero-grid,
-      .two-columns {
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1100px) {
+
+      .nav-menu {
+        gap: 2px;
+      }
+
+      .nav-menu a {
+        padding: 8px 8px;
+        font-size: 0.77rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mini-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stack-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ai-card {
+        grid-column: span 2;
+      }
+
+    }
+
+    @media (max-width: 800px) {
+
+      .header-container {
+        min-height: auto;
+
+        padding: 15px 0;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+      }
+
+      .nav-menu {
+        width: 100%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 3px;
+      }
+
+      .nav-menu a {
+        white-space: nowrap;
+      }
+
+      .about-grid {
         grid-template-columns: 1fr;
       }
 
-      .projects {
-        grid-template-columns: repeat(2, 1fr);
+      .education-grid {
+        grid-template-columns: 1fr;
       }
 
-      .mini-projects {
-        grid-template-columns: repeat(2, 1fr);
+      .languages {
+        grid-template-columns: 1fr;
       }
 
-      .orb {
-        width: 210px;
-        height: 210px;
+      .ai-card {
+        grid-column: span 1;
       }
+
+      .ai-card-header {
+        flex-direction: column;
+      }
+
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 650px) {
 
-      .nav-links {
-        display: none;
+      .container {
+        width: min(
+          var(--max-width),
+          calc(100% - 28px)
+        );
+      }
+
+      section {
+        padding: 75px 0;
       }
 
       .hero {
-        padding: 65px 0;
+        min-height: auto;
+
+        padding: 80px 0;
       }
 
-      .projects,
-      .mini-projects {
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .projects-grid {
         grid-template-columns: 1fr;
       }
 
-      .section-header {
-        display: block;
+      .mini-grid {
+        grid-template-columns: 1fr;
       }
 
-      .section-header p {
-        margin-top: 15px;
+      .stack-grid {
+        grid-template-columns: 1fr;
       }
 
-      .project-image {
-        height: 220px;
+      .footer-content {
+        flex-direction: column;
+
+        align-items: flex-start;
       }
+
+      .hero-buttons,
+      .contact-links {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="container nav">
 
-    <a class="logo" href="#">
-      Diana<span>.</span>dev
-    </a>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-    <div class="nav-links">
-      <a href="#proyectos">Proyectos</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#stack">Stack</a>
-      <a href="#contacto">Contacto</a>
-    </div>
+  <header>
 
-  </div>
-</nav>
+    <div class="container header-container">
 
+      <a href="#inicio" class="logo">
+        Diana<span>.dev</span>
+      </a>
 
-<header class="hero">
+      <nav aria-label="Navegación principal">
 
-  <div class="container hero-grid">
+        <ul class="nav-menu">
 
-    <div>
+          <li>
+            <a href="#sobre-mi">Sobre mí</a>
+          </li>
 
-      <div class="eyebrow">
-        Mobile · Software · Backend
-      </div>
+          <li>
+            <a href="#proyectos">Proyectos</a>
+          </li>
 
-      <h1>
-        Diana
-        <span class="gradient">
-          Rojas
-        </span>
-      </h1>
+          <li>
+            <a href="#experiencia">Experiencia</a>
+          </li>
 
-      <p class="hero-description">
-        Mobile & Software Developer con experiencia profesional
-        construyendo aplicaciones para Android y iOS.
-        Especializada en Flutter y Dart, con experiencia en
-        React Native, React, Node.js y desarrollo nativo.
-      </p>
+          <li>
+            <a href="#educacion">Educación</a>
+          </li>
 
-      <div class="buttons">
+          <li>
+            <a href="#stack">Stack</a>
+          </li>
 
-        <a
-          class="button primary"
-          href="#proyectos"
-        >
-          Ver proyectos ↓
-        </a>
+          <li>
+            <a href="#contacto">Contacto</a>
+          </li>
 
-        <a
-          class="button"
-          href="https://www.linkedin.com/in/diana-rojas-520092162/"
-          target="_blank"
-        >
-          LinkedIn ↗
-        </a>
+        </ul>
 
-        <a
-          class="button"
-          href="https://github.com/daikili"
-          target="_blank"
-        >
-          GitHub ↗
-        </a>
-
-      </div>
+      </nav>
 
     </div>
 
-    <div
-      class="orb"
-      aria-hidden="true"
-    ></div>
-
-  </div>
-
-</header>
+  </header>
 
 
-<main>
+  <main>
 
 
-<section>
+    <!-- =========================
+         HERO
+    ========================== -->
 
-  <div class="container">
+    <section class="hero" id="inicio">
 
-    <div class="section-header">
+      <div class="container">
 
-      <div>
+        <div class="hero-content">
 
-        <div class="kicker">
-          Perfil
+          <div class="eyebrow">
+            Mobile · Software · IA
+          </div>
+
+          <h1>
+            Diana<br>
+            <span>Rojas.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Mobile &amp; Software Developer con experiencia en el desarrollo
+            y evolución de aplicaciones para Android y iOS.
+          </p>
+
+          <p class="hero-stack">
+            Flutter <span>·</span>
+            Dart <span>·</span>
+            React Native <span>·</span>
+            React <span>·</span>
+            Node.js <span>·</span>
+            IA aplicada
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              class="button button-primary"
+              href="mailto:dianarojasdev011@gmail.com"
+            >
+              Contactarme
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://www.linkedin.com/in/diana-rojas-520092162/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://github.com/daikili"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+
+          </div>
+
         </div>
 
-        <h2>
-          Software que llega a producción.
-        </h2>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE MÍ
+    ========================== -->
+
+    <section id="sobre-mi">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Perfil
+          </div>
+
+          <h2 class="section-title">
+            Experiencia en desarrollo de software.
+          </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="card">
+
+            <p>
+              Soy Mobile &amp; Software Developer con experiencia en el
+              desarrollo de aplicaciones móviles para Android y iOS,
+              principalmente con Flutter y Dart, además de experiencia
+              en React, React Native y Node.js.
+            </p>
+
+            <p>
+              He participado en el desarrollo y evolución de productos
+              digitales, trabajando en nuevas funcionalidades, integración
+              de APIs REST y GraphQL, servicios de autenticación, Firebase,
+              bases de datos y manejo de estado.
+            </p>
+
+            <p>
+              También cuento con experiencia aplicando Clean Architecture,
+              MVVM, SOLID, patrones de diseño, inyección de dependencias,
+              pruebas unitarias y buenas prácticas de desarrollo.
+            </p>
+
+            <p>
+              Utilizo herramientas de inteligencia artificial como parte
+              de mi flujo de desarrollo para investigar, analizar código,
+              generar alternativas, resolver problemas, documentar,
+              refactorizar y acelerar tareas de desarrollo.
+            </p>
+
+            <p>
+              También he trabajado con prototipos como parte del proceso
+              de construcción y validación de productos digitales.
+            </p>
+
+            <p>
+              Mantengo formación continua en inglés y portugués, y estoy
+              abierta a oportunidades con empresas, proyectos freelance
+              y colaboraciones en desarrollo de software.
+            </p>
+
+          </div>
+
+
+          <div class="card highlight-card">
+
+            <div class="highlight-title">
+              En pocas palabras
+            </div>
+
+            <ul class="highlight-list">
+
+              <li>📱 Desarrollo móvil Android &amp; iOS</li>
+
+              <li>⚡ Flutter &amp; Dart</li>
+
+              <li>🧩 Arquitecturas y buenas prácticas</li>
+
+              <li>🔌 APIs REST &amp; GraphQL</li>
+
+              <li>🧪 Testing y calidad de código</li>
+
+              <li>🔥 Firebase</li>
+
+              <li>🤖 IA aplicada al desarrollo</li>
+
+              <li>🎨 Prototipado</li>
+
+              <li>📚 Formación continua</li>
+
+            </ul>
+
+          </div>
+
+        </div>
 
       </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROYECTOS
+    ========================== -->
+
+    <section id="proyectos">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Proyectos
+          </div>
+
+          <h2 class="section-title">
+            Productos en los que he trabajado.
+          </h2>
+
+          <p class="section-description">
+            Una selección de aplicaciones y productos digitales en los
+            que he participado durante mi experiencia profesional.
+          </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+          <!-- ORKAY -->
+
+          <article class="project-card">
+
+            <div class="project-visual">
+              <div class="project-letter">O</div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-company">
+                Kubo S.A.S.
+              </div>
+
+              <h3 class="project-title">
+                Orkay
+              </h3>
+
+              <p class="project-description">
+                Aplicación móvil para Android y iOS desarrollada con
+                Flutter, con integración de servicios y funcionalidades
+                orientadas al producto.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Android</span>
+                <span class="tag">iOS</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  class="project-link"
+                  href="https://play.google.com/store/apps/details?id=com.kubo.orkay"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google Play ↗
+                </a>
+
+                <a
+                  class="project-link"
+                  href="https://apps.apple.com/co/app/orkay/id6670175778"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  App Store ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- FNG -->
+
+          <article class="project-card">
+
+            <div class="project-visual">
+              <div class="project-letter">F</div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-company">
+                Kubo S.A.S.
+              </div>
+
+              <h3 class="project-title">
+                FNG
+              </h3>
+
+              <p class="project-description">
+                Aplicación móvil para Android y iOS, con desarrollo
+                y evolución de funcionalidades dentro del producto.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Android</span>
+                <span class="tag">iOS</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  class="project-link"
+                  href="https://play.google.com/store/apps/details?id=com.kubo.fng"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google Play ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CCD AUDIT -->
+
+          <article class="project-card">
+
+            <div class="project-visual">
+              <div class="project-letter">C</div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-company">
+                Kubo S.A.S.
+              </div>
+
+              <h3 class="project-title">
+                CCD Audit
+              </h3>
+
+              <p class="project-description">
+                Aplicación Android orientada a procesos de auditoría,
+                desarrollada y mantenida dentro del entorno profesional.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Android</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  class="project-link"
+                  href="https://play.google.com/store/apps/details?id=co.kubo.concienciav2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google Play ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- VITAPP -->
+
+          <article class="project-card">
+
+            <div class="project-visual">
+              <div class="project-letter">V</div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-company">
+                Kubo S.A.S.
+              </div>
+
+              <h3 class="project-title">
+                Vitapp
+              </h3>
+
+              <p class="project-description">
+                Aplicación móvil desarrollada para Android, con participación
+                en desarrollo y evolución de funcionalidades.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Android</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  class="project-link"
+                  href="https://play.google.com/store/apps/details?id=com.vitapp2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google Play ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CAMINANTES -->
+
+          <article class="project-card">
+
+            <div class="project-visual">
+              <div class="project-letter">M</div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-company">
+                Kubo S.A.S.
+              </div>
+
+              <h3 class="project-title">
+                Caminantes Mi Ser
+              </h3>
+
+              <p class="project-description">
+                Aplicación móvil Android desarrollada para apoyar
+                procesos y servicios del producto.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Android</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  class="project-link"
+                  href="https://play.google.com/store/apps/details?id=co.kubo.MiSer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google Play ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PÍDELO -->
+
+          <article class="project-card">
+
+            <div class="project-visual">
+              <div class="project-letter">P</div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-company">
+                Kubo S.A.S.
+              </div>
+
+              <h3 class="project-title">
+                Pídelo
+              </h3>
+
+              <p class="project-description">
+                Aplicación móvil para Android y iOS, participando en
+                el desarrollo y evolución de funcionalidades.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Android</span>
+                <span class="tag">iOS</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  class="project-link"
+                  href="https://play.google.com/store/apps/details?id=com.kubo.pidelousuario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google Play ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- TU CASA PROPIA -->
+
+          <article class="project-card">
+
+            <div class="project-visual">
+              <div class="project-letter">TC</div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-company">
+                Un Toque Digital
+              </div>
+
+              <h3 class="project-title">
+                Tu Casa Propia
+              </h3>
+
+              <p class="project-description">
+                Proyecto web desarrollado con React, enfocado en
+                la experiencia digital y gestión de funcionalidades
+                del producto.
+              </p>
+
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Frontend</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  class="project-link"
+                  href="https://tucasapropia.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver proyecto ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <!-- OTROS PROYECTOS -->
+
+        <div class="mini-projects">
+
+          <h3 class="mini-projects-title">
+            Otros proyectos y colaboraciones
+          </h3>
+
+          <div class="mini-grid">
+
+            <div class="mini-card">
+              <strong>El Tiempo</strong>
+              <span>Android · Flutter</span>
+            </div>
+
+            <div class="mini-card">
+              <strong>Ideas Control</strong>
+              <span>Android · NFC</span>
+            </div>
+
+            <div class="mini-card">
+              <strong>Next FPV</strong>
+              <span>Freelance · Mobile</span>
+            </div>
+
+            <div class="mini-card">
+              <strong>Bericool</strong>
+              <span>Android</span>
+            </div>
+
+            <div class="mini-card">
+              <strong>Pamii</strong>
+              <span>Mobile</span>
+            </div>
+
+            <div class="mini-card">
+              <strong>Bcademy</strong>
+              <span>React Native</span>
+            </div>
+
+            <div class="mini-card">
+              <strong>Admin Leads</strong>
+              <span>React</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCIA
+    ========================== -->
+
+    <section id="experiencia">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Experiencia
+          </div>
+
+          <h2 class="section-title">
+            Trayectoria profesional.
+          </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-date">
+              2023 — 2026
+            </div>
+
+            <h3 class="timeline-title">
+              Mobile Developer
+            </h3>
+
+            <div class="timeline-company">
+              Kubo S.A.S.
+            </div>
+
+            <p class="timeline-description">
+              Desarrollo y mantenimiento de aplicaciones Android y iOS,
+              principalmente con Flutter y Dart. Participación en nuevas
+              funcionalidades, integración de APIs, autenticación,
+              Firebase, corrección de errores, evolución de productos
+              y aplicación de arquitecturas y buenas prácticas de desarrollo.
+            </p>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-date">
+              2021 — 2022
+            </div>
+
+            <h3 class="timeline-title">
+              Frontend &amp; Mobile Developer
+            </h3>
+
+            <div class="timeline-company">
+              Un Toque Digital
+            </div>
+
+            <p class="timeline-description">
+              Desarrollo de proyectos web y móviles utilizando React,
+              React Native y JavaScript. Participación en productos como
+              Tu Casa Propia, Bcademy y Admin Leads.
+            </p>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-date">
+              Freelance
+            </div>
+
+            <h3 class="timeline-title">
+              Mobile Developer
+            </h3>
+
+            <div class="timeline-company">
+              Next FPV
+            </div>
+
+            <p class="timeline-description">
+              Desarrollo y evolución de una solución móvil como proyecto
+              independiente, participando en la construcción de
+              funcionalidades y adaptación del producto a las necesidades
+              del proyecto.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCACIÓN
+    ========================== -->
+
+    <section id="educacion">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Formación
+          </div>
+
+          <h2 class="section-title">
+            Educación y aprendizaje continuo.
+          </h2>
+
+        </div>
+
+
+        <div class="education-grid">
+
+
+          <div class="education-card">
+
+            <div class="education-year">
+              2014 — 2017
+            </div>
+
+            <h3 class="education-title">
+              Ingeniería en Sistemas
+            </h3>
+
+            <div class="education-place">
+              Universidad Nacional Experimental de Guayana · Venezuela
+            </div>
+
+            <p class="education-description">
+              Estudios universitarios no culminados.
+            </p>
+
+          </div>
+
+
+          <div class="education-card">
+
+            <div class="education-year">
+              2022
+            </div>
+
+            <h3 class="education-title">
+              Misión TIC 2022
+            </h3>
+
+            <div class="education-place">
+              Universidad Sergio Arboleda
+            </div>
+
+            <p class="education-description">
+              Formación intensiva en programación y desarrollo de software.
+            </p>
+
+          </div>
+
+
+          <div class="education-card">
+
+            <div class="education-year">
+              2021 — 2022
+            </div>
+
+            <h3 class="education-title">
+              Desarrollo Frontend
+            </h3>
+
+            <div class="education-place">
+              Academia Geek
+            </div>
+
+            <p class="education-description">
+              Bootcamp enfocado en desarrollo frontend y tecnologías web.
+            </p>
+
+          </div>
+
+
+          <div class="education-card">
+
+            <div class="education-year">
+              Formación continua
+            </div>
+
+            <h3 class="education-title">
+              Desarrollo de software
+            </h3>
+
+            <div class="education-place">
+              Udemy
+            </div>
+
+            <p class="education-description">
+              Estudios constantes mediante cursos de desarrollo web,
+              móvil y tecnologías de software.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         STACK
+    ========================== -->
+
+    <section id="stack">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Tecnologías
+          </div>
+
+          <h2 class="section-title">
+            Stack técnico.
+          </h2>
+
+          <p class="section-description">
+            Tecnologías, herramientas y metodologías que forman parte
+            de mi experiencia de desarrollo.
+          </p>
+
+        </div>
+
+
+        <div class="stack-grid">
+
+
+          <!-- MOBILE -->
+
+          <div class="stack-card">
+
+            <h3>
+              Mobile
+            </h3>
+
+            <div class="stack-items">
+
+              <span class="stack-item">Flutter</span>
+              <span class="stack-item">Dart</span>
+              <span class="stack-item">Android</span>
+              <span class="stack-item">iOS</span>
+              <span class="stack-item">React Native</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- ARQUITECTURA -->
+
+          <div class="stack-card">
+
+            <h3>
+              Arquitectura &amp; patrones
+            </h3>
+
+            <div class="stack-items">
+
+              <span class="stack-item">Clean Architecture</span>
+              <span class="stack-item">MVVM</span>
+              <span class="stack-item">SOLID</span>
+              <span class="stack-item">Repository Pattern</span>
+              <span class="stack-item">Dependency Injection</span>
+              <span class="stack-item">GetIt</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- STATE -->
+
+          <div class="stack-card">
+
+            <h3>
+              State Management
+            </h3>
+
+            <div class="stack-items">
+
+              <span class="stack-item">BLoC</span>
+              <span class="stack-item">Cubit</span>
+              <span class="stack-item">Riverpod</span>
+              <span class="stack-item">Provider</span>
+              <span class="stack-item">GetX</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- TESTING -->
+
+          <div class="stack-card">
+
+            <h3>
+              Testing &amp; Quality
+            </h3>
+
+            <div class="stack-items">
+
+              <span class="stack-item">Unit Testing</span>
+              <span class="stack-item">Integration Testing</span>
+              <span class="stack-item">Debugging</span>
+              <span class="stack-item">Code Review</span>
+              <span class="stack-item">SonarQube</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- BACKEND -->
+
+          <div class="stack-card">
+
+            <h3>
+              Backend &amp; APIs
+            </h3>
+
+            <div class="stack-items">
+
+              <span class="stack-item">Node.js</span>
+              <span class="stack-item">REST</span>
+              <span class="stack-item">GraphQL</span>
+              <span class="stack-item">Firebase</span>
+              <span class="stack-item">Authentication</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- DATA -->
+
+          <div class="stack-card">
+
+            <h3>
+              Datos
+            </h3>
+
+            <div class="stack-items">
+
+              <span class="stack-item">SQL</span>
+              <span class="stack-item">SQLite</span>
+              <span class="stack-item">SharedPreferences</span>
+              <span class="stack-item">Firebase</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- FRONTEND -->
+
+          <div class="stack-card">
+
+            <h3>
+              Frontend
+            </h3>
+
+            <div class="stack-items">
+
+              <span class="stack-item">React</span>
+              <span class="stack-item">JavaScript</span>
+              <span class="stack-item">HTML</span>
+              <span class="stack-item">CSS</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- TOOLS -->
+
+          <div class="stack-card">
+
+            <h3>
+              Herramientas
+            </h3>
+
+            <div class="stack-items">
+
+              <span class="stack-item">Git</span>
+              <span class="stack-item">GitHub</span>
+              <span class="stack-item">GitHub Actions</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- IA -->
+
+          <div class="ai-card">
+
+            <div class="ai-card-header">
+
+              <div>
+
+                <h3>
+                  Inteligencia Artificial &amp; desarrollo asistido
+                </h3>
+
+                <p>
+                  Uso herramientas de IA como parte de mi flujo de desarrollo
+                  para investigación, generación y revisión de código,
+                  debugging, refactorización, documentación, exploración
+                  de soluciones y aceleración del proceso de desarrollo.
+                </p>
+
+              </div>
+
+              <div class="ai-badge">
+                AI-assisted Development
+              </div>
+
+            </div>
+
+
+            <div class="ai-tools">
+
+              <span class="ai-tool">
+                ChatGPT
+              </span>
+
+              <span class="ai-tool">
+                Gemini
+              </span>
+
+              <span class="ai-tool">
+                Claude
+              </span>
+
+              <span class="ai-tool">
+                DeepSeek
+              </span>
+
+              <span class="ai-tool">
+                Antigravity
+              </span>
+
+              <span class="ai-tool">
+                OpenCode
+              </span>
+
+            </div>
+
+
+            <div class="prototype-section">
+
+              <h3>
+                Prototipado
+              </h3>
+
+              <p>
+                Experiencia trabajando con prototipos como apoyo para
+                visualizar interfaces, validar ideas y facilitar la
+                construcción de productos digitales antes y durante
+                el desarrollo.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         IDIOMAS
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Idiomas
+          </div>
+
+          <h2 class="section-title">
+            También sigo aprendiendo.
+          </h2>
+
+        </div>
+
+
+        <div class="languages">
+
+
+          <div class="language-card">
+
+            <h3 class="language-name">
+              Español
+            </h3>
+
+            <div class="language-level">
+              Nativo
+            </div>
+
+          </div>
+
+
+          <div class="language-card">
+
+            <h3 class="language-name">
+              Inglés
+            </h3>
+
+            <div class="language-level">
+              A2–B1 · Aprendiendo
+            </div>
+
+          </div>
+
+
+          <div class="language-card">
+
+            <h3 class="language-name">
+              Portugués
+            </h3>
+
+            <div class="language-level">
+              A2 · Aprendiendo
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+
+    <section id="contacto">
+
+      <div class="container">
+
+        <div class="contact-card">
+
+          <h2>
+            ¿Hablamos?
+          </h2>
+
+          <p>
+            Estoy abierta a oportunidades como desarrolladora móvil,
+            proyectos de software, colaboraciones y proyectos freelance.
+          </p>
+
+          <a
+            class="contact-email"
+            href="mailto:dianarojasdev011@gmail.com"
+          >
+            dianarojasdev011@gmail.com
+          </a>
+
+          <div class="contact-links">
+
+            <a
+              class="button button-primary"
+              href="mailto:dianarojasdev011@gmail.com"
+            >
+              Enviar correo
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://www.linkedin.com/in/diana-rojas-520092162/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://github.com/daikili"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-content">
 
       <p>
-        Experiencia trabajando en productos reales,
-        mantenimiento, evolución y nuevas funcionalidades.
+        © 2026 Diana Rojas. Mobile &amp; Software Developer.
       </p>
-
-    </div>
-
-
-    <div class="two-columns">
-
-      <div class="panel">
-
-        <p>
-          He participado en múltiples aplicaciones móviles
-          para diferentes industrias y clientes, trabajando
-          principalmente con Flutter y Dart.
-
-          También he desarrollado soluciones con React Native
-          y React, y actualmente estoy ampliando mi perfil
-          hacia backend con Node.js y desarrollo nativo.
-        </p>
-
-
-        <div class="facts">
-
-          <div class="fact">
-            <strong>Mobile</strong>
-            <span>Android · iOS</span>
-          </div>
-
-          <div class="fact">
-            <strong>Frontend</strong>
-            <span>Flutter · React Native · React</span>
-          </div>
-
-          <div class="fact">
-            <strong>Backend</strong>
-            <span>Node.js · REST APIs</span>
-          </div>
-
-          <div class="fact">
-            <strong>Arquitectura</strong>
-            <span>Clean Architecture · SOLID</span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="panel">
-
-        <div class="kicker">
-          Actualmente
-        </div>
-
-        <h3
-          style="
-          font-size:1.7rem;
-          margin:8px 0 12px;
-          "
-        >
-          Ampliando mi perfil hacia Backend y Native.
-        </h3>
-
-        <p>
-          Además de mi experiencia con Flutter,
-          estoy fortaleciendo conocimientos y práctica
-          en Node.js, backend y desarrollo nativo para
-          complementar mi perfil de software developer.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<section id="proyectos">
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <div>
-
-        <div class="kicker">
-          Trabajo profesional
-        </div>
-
-        <h2>
-          Apps en producción
-        </h2>
-
-      </div>
 
       <p>
-        Proyectos en los que participé durante mi
-        experiencia profesional.
+        Flutter · Dart · React Native · React · Node.js · IA
       </p>
 
     </div>
 
-
-    <div class="projects">
-
-
-      <!-- ORKAY -->
-
-      <article class="project">
-
-        <div class="project-image">
-
-          <div class="project-icon">
-            O
-          </div>
-
-        </div>
-
-        <div class="project-content">
-
-          <span class="company">
-            Kubo S.A.S.
-          </span>
-
-          <h3>
-            Orkay
-          </h3>
-
-          <p>
-            Aplicación móvil para descubrir marcas,
-            emprendimientos, actividades y planes.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Flutter</span>
-            <span class="tag">Dart</span>
-            <span class="tag">Android</span>
-            <span class="tag">iOS</span>
-
-          </div>
-
-          <a
-            class="store"
-            href="https://play.google.com/store/apps/details?id=com.kubo.orkay"
-            target="_blank"
-          >
-            Google Play ↗
-          </a>
-
-          <a
-            class="store dark"
-            href="https://apps.apple.com/co/app/orkay/id6670175778"
-            target="_blank"
-          >
-            App Store ↗
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- FNG -->
-
-      <article class="project">
-
-        <div class="project-image">
-
-          <div class="project-icon">
-            F
-          </div>
-
-        </div>
-
-        <div class="project-content">
-
-          <span class="company">
-            Kubo S.A.S.
-          </span>
-
-          <h3>
-            FNG
-          </h3>
-
-          <p>
-            Aplicación móvil del Fondo Nacional de Garantías
-            para apoyar consultas y gestión comercial.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Flutter</span>
-            <span class="tag">Dart</span>
-            <span class="tag">Android</span>
-            <span class="tag">iOS</span>
-
-          </div>
-
-          <a
-            class="store"
-            href="https://play.google.com/store/apps/details?id=com.kubo.fng"
-            target="_blank"
-          >
-            Google Play ↗
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- CCD -->
-
-      <article class="project">
-
-        <div class="project-image">
-
-          <div class="project-icon">
-            C
-          </div>
-
-        </div>
-
-        <div class="project-content">
-
-          <span class="company">
-            Kubo S.A.S.
-          </span>
-
-          <h3>
-            CCD Audit
-          </h3>
-
-          <p>
-            Aplicación para gestión y seguimiento
-            de auditorías en instituciones de salud.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Flutter</span>
-            <span class="tag">Dart</span>
-            <span class="tag">Android</span>
-
-          </div>
-
-          <a
-            class="store"
-            href="https://play.google.com/store/apps/details?id=co.kubo.concienciav2"
-            target="_blank"
-          >
-            Google Play ↗
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- VITAPP -->
-
-      <article class="project">
-
-        <div class="project-image">
-
-          <div class="project-icon">
-            V
-          </div>
-
-        </div>
-
-        <div class="project-content">
-
-          <span class="company">
-            Kubo S.A.S.
-          </span>
-
-          <h3>
-            Vitapp
-          </h3>
-
-          <p>
-            Aplicación de bienestar y salud con
-            contenidos y recomendaciones personalizadas.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Flutter</span>
-            <span class="tag">Dart</span>
-            <span class="tag">Android</span>
-
-          </div>
-
-          <a
-            class="store"
-            href="https://play.google.com/store/apps/details?id=com.vitapp2"
-            target="_blank"
-          >
-            Google Play ↗
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- CAMINANTES -->
-
-      <article class="project">
-
-        <div class="project-image">
-
-          <div class="project-icon">
-            M
-          </div>
-
-        </div>
-
-        <div class="project-content">
-
-          <span class="company">
-            Kubo S.A.S.
-          </span>
-
-          <h3>
-            Caminantes Mi Ser
-          </h3>
-
-          <p>
-            Aplicación con mapas, geolocalización
-            y encuestas para intervención social.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Flutter</span>
-            <span class="tag">Geolocalización</span>
-            <span class="tag">Android</span>
-
-          </div>
-
-          <a
-            class="store"
-            href="https://play.google.com/store/apps/details?id=co.kubo.MiSer"
-            target="_blank"
-          >
-            Google Play ↗
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- PIDELO -->
-
-      <article class="project">
-
-        <div class="project-image">
-
-          <div class="project-icon">
-            P
-          </div>
-
-        </div>
-
-        <div class="project-content">
-
-          <span class="company">
-            Kubo S.A.S.
-          </span>
-
-          <h3>
-            Pídelo
-          </h3>
-
-          <p>
-            Solución móvil para transporte empresarial,
-            encomiendas y gestión de vehículos.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Flutter</span>
-            <span class="tag">Dart</span>
-            <span class="tag">Android</span>
-            <span class="tag">iOS</span>
-
-          </div>
-
-          <a
-            class="store"
-            href="https://play.google.com/store/apps/details?id=com.kubo.pidelousuario"
-            target="_blank"
-          >
-            Google Play ↗
-          </a>
-
-        </div>
-
-      </article>
-
-    </div>
-
-
-
-    <div class="mini-projects">
-
-      <div class="mini">
-        <strong>El Tiempo</strong>
-        <span>Kubo S.A.S. · Flutter · Android</span>
-      </div>
-
-      <div class="mini">
-        <strong>Ideas Control</strong>
-        <span>Kubo S.A.S. · Flutter · NFC</span>
-      </div>
-
-      <div class="mini">
-        <strong>Next FPV</strong>
-        <span>Freelance · Flutter · Android</span>
-      </div>
-
-      <div class="mini">
-        <strong>Bericool</strong>
-        <span>Kubo S.A.S. · Android</span>
-      </div>
-
-      <div class="mini">
-        <strong>Pamii</strong>
-        <span>Kubo S.A.S. · Mobile</span>
-      </div>
-
-      <div class="mini">
-        <strong>Tu Casa Propia</strong>
-        <span>Un Toque Digital · React</span>
-      </div>
-
-      <div class="mini">
-        <strong>Bcademy</strong>
-        <span>Un Toque Digital · React Native</span>
-      </div>
-
-      <div class="mini">
-        <strong>Admin Leads</strong>
-        <span>Un Toque Digital · React</span>
-      </div>
-
-      <div class="mini">
-        <strong>+ proyectos</strong>
-        <span>Experiencia con múltiples productos</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<section id="experiencia">
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <div>
-
-        <div class="kicker">
-          Trayectoria
-        </div>
-
-        <h2>
-          Experiencia profesional
-        </h2>
-
-      </div>
-
-      <p>
-        Desarrollo móvil, frontend y evolución
-        hacia backend.
-      </p>
-
-    </div>
-
-
-    <div class="two-columns">
-
-      <div class="panel timeline">
-
-        <div class="job">
-
-          <div class="date">
-            2023 — 2026
-          </div>
-
-          <h3>
-            Mobile Developer · Kubo S.A.S.
-          </h3>
-
-          <p>
-            Desarrollo y mantenimiento de aplicaciones
-            para Android e iOS, principalmente con
-            Flutter y Dart. Participación en funcionalidades,
-            integraciones, correcciones y evolución
-            de productos reales.
-          </p>
-
-        </div>
-
-
-        <div class="job">
-
-          <div class="date">
-            Experiencia profesional
-          </div>
-
-          <h3>
-            Frontend & Mobile Developer · Un Toque Digital
-          </h3>
-
-          <p>
-            Participación en Tu Casa Propia con React,
-            Bcademy con React Native y Admin Leads con React.
-          </p>
-
-        </div>
-
-
-        <div class="job">
-
-          <div class="date">
-            Freelance
-          </div>
-
-          <h3>
-            Mobile Developer · Next FPV
-          </h3>
-
-          <p>
-            Desarrollo de aplicación móvil como proyecto freelance.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="panel">
-
-        <div class="kicker">
-          Perfil actual
-        </div>
-
-        <h3
-          style="
-          font-size:1.7rem;
-          margin:8px 0 12px;
-          "
-        >
-          Mobile + Software + Backend
-        </h3>
-
-        <p>
-          Estoy ampliando mi perfil hacia Node.js,
-          backend y desarrollo nativo, complementando
-          mi experiencia principal en desarrollo móvil
-          con Flutter.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<section id="stack">
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <div>
-
-        <div class="kicker">
-          Tecnologías
-        </div>
-
-        <h2>
-          Mi stack
-        </h2>
-
-      </div>
-
-      <p>
-        Tecnologías con las que he trabajado
-        profesionalmente o estoy fortaleciendo.
-      </p>
-
-    </div>
-
-
-    <div class="panel">
-
-      <div class="skills">
-
-        <span class="skill">Dart</span>
-        <span class="skill">Flutter</span>
-        <span class="skill">BLoC</span>
-        <span class="skill">Cubit</span>
-        <span class="skill">Riverpod</span>
-        <span class="skill">Provider</span>
-        <span class="skill">GetX</span>
-        <span class="skill">GetIt</span>
-        <span class="skill">Clean Architecture</span>
-        <span class="skill">MVVM</span>
-        <span class="skill">SOLID</span>
-        <span class="skill">REST API</span>
-        <span class="skill">GraphQL</span>
-        <span class="skill">Firebase</span>
-        <span class="skill">SQLite</span>
-        <span class="skill">React Native</span>
-        <span class="skill">React</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">Node.js</span>
-        <span class="skill">Android</span>
-        <span class="skill">iOS</span>
-        <span class="skill">Git</span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<section id="contacto">
-
-  <div class="container">
-
-    <div class="contact">
-
-      <div class="kicker">
-        Contacto
-      </div>
-
-      <h2>
-        ¿Hablamos?
-      </h2>
-
-      <p>
-        Estoy abierta a oportunidades como Mobile Developer,
-        Flutter Developer o Software Developer.
-      </p>
-
-      <div
-        class="buttons"
-        style="justify-content:center;"
-      >
-
-        <a
-          class="button primary"
-          href="mailto:dianarojasdev011@gmail.com"
-        >
-          dianarojasdev011@gmail.com
-        </a>
-
-        <a
-          class="button"
-          href="https://www.linkedin.com/in/diana-rojas-520092162/"
-          target="_blank"
-        >
-          LinkedIn ↗
-        </a>
-
-        <a
-          class="button"
-          href="https://github.com/daikili"
-          target="_blank"
-        >
-          GitHub ↗
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-<footer>
-
-  <div class="container footer-content">
-
-    <span>
-      © 2026 Diana Rojas
-    </span>
-
-    <span>
-      Mobile & Software Developer · Flutter · Node.js · React Native
-    </span>
-
-  </div>
-
-</footer>
+  </footer>
 
 </body>
 </html>
